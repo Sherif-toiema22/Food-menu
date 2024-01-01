@@ -14,7 +14,11 @@
 </head>
 
 <body>
- <div class="content">
+
+    <div class="content">
+        <div th:if="${successMessage}" th:text="${successMessage}"  class="alert alert-success" role="alert"></div>
+        <div th:if="${errorMessage}" th:text="${errorMessage}"  class="alert alert-error" role="alert"></div>
+
      <form th:object="${food}" th:action="@{/home}" th:method="POST">
          <div class="mb-3">
              <label for="exampleInputEmail1" class="form-label">Name</label>
